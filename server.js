@@ -50,6 +50,7 @@ app.post('/addData', function(req, res) {
     projectData["temp"] = data.temp;
     projectData["user_response"] = data.user_response;
     projectData["date"] = data.date;
+    projectData["city_name"] = data.city_name;
 
     //Send response to endpoint
     res.send(projectData);
