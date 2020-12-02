@@ -71,7 +71,7 @@ const updateUI = async () => {
       
       document.getElementById('date').innerHTML = allData.date;
       document.getElementById('temp').innerHTML = Math.round(allData.temp) + ' degrees';
-      document.getElementById('feels_like').innerHTML = allData.feels_like;
+      document.getElementById('feels_like').innerHTML = allData.feels_like + ' degrees';
       document.getElementById('content').innerHTML = allData.user_response;
       document.getElementById('city').innerHTML = allData.city_name;
      }catch(error){
