@@ -8,44 +8,49 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
-    color: #f0d43a;
+    background: rgb(17, 56, 125);
+    color: white;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
-/*.holder{
-test
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(17, 48, 118);
 }
 
-.entry{
-    background: rgba(59, 74, 107, .4);
+#zip{
+    height: 100%;
+    width: 320px;
+    background:#22b2da;
+    color: white;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    border-radius: 30px; 
+    text-align: center; 
+    background-color: rgb(65, 89, 145);
 }
 
-#entryHolder{
-
+#generate{
+    width: 60px;
+    height: 100%;
+    background: #3b4a6b;
+    color: white;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+    margin-left: -59px;
 }
 
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-.headline {
-
-}
-.title{
-
-}*/
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
@@ -53,34 +58,13 @@ label{
     font-size: 27px;
 }
 
-input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-}
-
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-}
 h1{
     font-size: 36px;
 }
 
 textarea{
     background:#22b2da;
-    color: #f0d43a;
+    color: white;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -93,7 +77,7 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
+    color: white; 
     font-family: 'Oswald', sans-serif;
 
 } 
