@@ -73,7 +73,7 @@ const updateUI = async () => {
       document.getElementById('temp').innerHTML = Math.round(allData.temp) + ' degrees';
       document.getElementById('feels_like').innerHTML = allData.feels_like + ' degrees';
       document.getElementById('content').innerHTML = allData.user_response;
-      document.getElementById('city').innerHTML = allData.city_name;
+      document.getElementById('city').innerHTML = 'Weather in ' + allData.city_name;
      }catch(error){
       console.log("error", error);
     }
