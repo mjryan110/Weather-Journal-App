@@ -16,13 +16,35 @@
     </div>
   </header> 
   <div id = "app">
-      <div class ="holder entry">
-        <div class = "title"></div>
-        <div id = "entryHolder">
-          <div id = "date"></div>
-          <div id = "city"></div> 
-          <div id = "temp"></div>
-          <div id = "feels_like"></div>
+      <div class ="cur-weather-card">
+        <div class="cur-weather-card_body">
+          <div class="cur-weather-card_body_panel">
+            <h2 class="cur-weather-card_title" id="city"></h2>
+            <div id="date"></div>
+            <div class="forecast-container">
+              <div class="temp-container">
+                <div class="temp" id="temp"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cur-weather-card_body_panel_details">
+            <div class="weather-description">
+              <span id="weather-description-label">Weather Description: </span>
+              <span id="weather-description"></span>
+            </div>
+            <div class="feels-like"> 
+              <span id="feels-like-label">Feels Like: </span>
+              <span id="feels-like"></span>
+            </div>
+            <div class="wind-speed">
+              <span id="wind-speed-label">Wind: </span>
+              <span id="wind-speed"></span>
+            </div>
+            <div class="sunset">
+              <span id="sunset-time-label">Time of Sunset: </span>
+              <span id="sunset-time"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

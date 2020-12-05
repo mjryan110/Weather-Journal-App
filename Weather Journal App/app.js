@@ -3,7 +3,10 @@ const apiKey = "&appid=f3cf62c5df90459a77a1e98152c3cfe8&units=imperial"
 const baseURL = "api.openweathermap.org/data/2.5/weather?zip="
 
 let d = new Date();
-let newDate = d.getMonth() + 1 + '/' + d.getDate() + '/' + d.getFullYear();
+let newDate = d.getMonth() + 1 + '/' + d.getDate() + '/' + d.getFullYear() + ' ' + d.getHours() + ":" + d.getMinutes();
+
+
+
 
 // Event listener to add function to existing HTML DOM element
 
@@ -20,7 +23,10 @@ function performAction(e) {
         let temp = data.main.temp;
         let temp_feeling = data.main.feels_like;
         let city = data.name;
-        postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, city_name: city});
+        let weather_desc = data.weather.description;
+        let wind = data.wind.speed;
+        let sunset = data.sys.sunset;
+        postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, city_name: city, weather_desc: weather_desc, wind: wind, sunset: sunset});
     })
     .then(function(){
         updateUI();
@@ -69,9 +75,12 @@ const updateUI = async () => {
       console.log('allData ', allData)
       
       document.getElementById('date').innerHTML = allData.date;
-      document.getElementById('temp').innerHTML = Math.round(allData.temp) + ' degrees';
-      document.getElementById('feels_like').innerHTML = allData.feels_like + ' degrees';
-      document.getElementById('city').innerHTML = allData.city_name;
+      document.getElementById('temp').innerHTML = Math.round(allData.temp) + '\u00B0';
+      document.getElementById('feels-like').innerHTML = allData.feels_like + '\u00B0';
+      document.getElementById('city').innerHTML = allData.city_name + ' Weather';
+      document.getElementById('weather-description').innerHTML = allData.weather_desc;
+      document.getElementById('wind-speed').innerHTML = allData.wind;
+      document.getElementById('sunset-time').innerHTML = allData.sunset;
      }catch(error){
       console.log("error", error);
     }
