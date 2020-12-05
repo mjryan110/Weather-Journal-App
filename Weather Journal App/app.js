@@ -12,7 +12,6 @@ document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e) {
     let zip = document.getElementById('zip').value;
-    let feelings = document.getElementById('feelings').value;
     let units = "imperial";
     
     retrieveData(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f3cf62c5df90459a77a1e98152c3cfe8&units=${units}`)
@@ -21,7 +20,7 @@ function performAction(e) {
         let temp = data.main.temp;
         let temp_feeling = data.main.feels_like;
         let city = data.name;
-        postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, user_response: feelings, city_name: city});
+        postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, city_name: city});
     })
     .then(function(){
         updateUI();
@@ -72,8 +71,7 @@ const updateUI = async () => {
       document.getElementById('date').innerHTML = allData.date;
       document.getElementById('temp').innerHTML = Math.round(allData.temp) + ' degrees';
       document.getElementById('feels_like').innerHTML = allData.feels_like + ' degrees';
-      document.getElementById('content').innerHTML = allData.user_response;
-      document.getElementById('city').innerHTML = 'Weather in ' + allData.city_name;
+      document.getElementById('city').innerHTML = allData.city_name;
      }catch(error){
       console.log("error", error);
     }

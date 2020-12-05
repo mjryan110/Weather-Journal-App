@@ -49,7 +49,6 @@ app.post('/addData', function(req, res) {
     // Create new entry for JS Object Endpoint
     projectData["temp"] = data.temp;
     projectData["feels_like"] = data.feels_like;
-    projectData["user_response"] = data.user_response;
     projectData["date"] = data.date;
     projectData["city_name"] = data.city_name;
 
