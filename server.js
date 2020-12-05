@@ -52,6 +52,8 @@ app.post('/addData', function(req, res) {
     projectData["date"] = data.date;
     projectData["city_name"] = data.city_name;
     projectData["wind"] = data.wind;
+    projectData["sunset"] = data.sunset;
+    projectData["weather_desc"] = data.weather_desc;
 
     //Send response to endpoint
     res.send(projectData);

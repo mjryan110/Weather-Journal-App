@@ -23,7 +23,7 @@ function performAction(e) {
         let temp = data.main.temp;
         let temp_feeling = data.main.feels_like;
         let city = data.name;
-        let weather_desc = data.weather.description;
+        let weather_desc = data['weather'][0]['description'];
         let wind = data.wind.speed;
         let sunset = data.sys.sunset;
         postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, city_name: city, weather_desc: weather_desc, wind: wind, sunset: sunset});
