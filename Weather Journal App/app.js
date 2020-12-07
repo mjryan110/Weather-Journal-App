@@ -75,11 +75,11 @@ const updateUI = async () => {
       console.log('allData ', allData)
       
       document.getElementById('date').innerHTML = allData.date;
-      document.getElementById('temp').innerHTML = Math.round(allData.temp) + '\u00B0';
-      document.getElementById('feels-like').innerHTML = allData.feels_like + '\u00B0';
+      document.getElementById('temp').innerHTML = Math.round((allData.temp-273.15)*1.8+32) + '\u00B0' + 'F';
+      document.getElementById('feels-like').innerHTML = Math.round((allData.feels_like-273.15)*1.8+32) + '\u00B0' + 'F';
       document.getElementById('city').innerHTML = allData.city_name + ' Weather';
       document.getElementById('weather-description').innerHTML = allData.weather_desc;
-      document.getElementById('wind-speed').innerHTML = allData.wind;
+      document.getElementById('wind-speed').innerHTML = allData.wind + ' MPH';
       document.getElementById('sunset-time').innerHTML = allData.sunset;
      }catch(error){
       console.log("error", error);
