@@ -25,7 +25,8 @@ function performAction(e) {
         let city = data.name;
         let weather_desc = data['weather'][0]['description'];
         let wind = data.wind.speed;
-        let sunset = data.sys.sunset;
+        let sunset_date = new Date(data.sys.sunset * 1000);
+        let sunset = sunset_date.getHours() + ":" + sunset_date.getMinutes()
         postData('/addData', {temp: temp, feels_like: temp_feeling, date: newDate, city_name: city, weather_desc: weather_desc, wind: wind, sunset: sunset});
     })
     .then(function(){
